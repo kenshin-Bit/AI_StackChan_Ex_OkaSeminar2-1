@@ -28,9 +28,9 @@
 
 ## 1. レポジトリのダウンロード
 
-[ここ](https://github.com/okana2ki/AI_StackChan_Ex_OkaSeminar)から、関連ファイル一式が入ったレポジトリの圧縮ファイル をダウンロード ← 今後も加筆修正すると思いますので、最新版は、都度、ダウンロードするか、差分を更新して下さい。
+[ここ](https://github.com/okana2ki/AI_StackChan_Ex_OkaSeminar2)から、関連ファイル一式が入ったレポジトリの圧縮ファイル をダウンロード ← 今後も加筆修正すると思いますので、最新版は、都度、ダウンロードするか、差分を更新して下さい。
 
-①↑ 上記のリンクをクリックして現れた画面右上部 緑色の Code ボタンをクリック → ②ドロップダウンメニュー 一番下の Download ZIP をクリック） → ③ダウンロードした圧縮ファイルAI_StackChan_Ex_OkaSeminar-main.zipを解凍 → ④解凍したフォルダ StackChan_Ex_OkaSeminar-main をPCの適切な場所（C:の直下など、できるだけ浅い階層が望ましい）に置く；ここで、フォルダ名 StackChan_Ex_OkaSeminar-main を stackchan という名前に変更します。以降の説明では、このフォルダは、stackchanフォルダと呼ばれます。
+①↑ 上記のリンクをクリックして現れた画面右上部 緑色の Code ボタンをクリック → ②ドロップダウンメニュー 一番下の Download ZIP をクリック） → ③ダウンロードした圧縮ファイルAI_StackChan_Ex_OkaSeminar2-main.zipを解凍 → ④解凍したフォルダ StackChan_Ex_OkaSeminar2-main をPCの適切な場所（C:の直下など、できるだけ浅い階層が望ましい）に置く；ここで、フォルダ名 StackChan_Ex_OkaSeminar2-main を stackchan という名前に変更します。以降の説明では、このフォルダは、stackchanフォルダと呼ばれます。
 
 ### 豆知識
 
