@@ -547,8 +547,38 @@ Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match 'COM\d+' } | Sel
 
 ロボットに入れる前に確認できます。うまくいかないときの切り分けに便利です。
 
-Windowsの「PowerShell」を開いて、次を貼り付けて実行します（`ここにキー` を自分のキーに置き換え）。
+Windowsの「PowerShell」を開いて、次を貼り付けて実行します（`ここにキー` を自分のキーに置き換え；キーの前後の引用符`"`は消さずにそのまま残して下さい）。
 
+```powershell
+$key = "ここにAPIキー"
+$uri = "https://generativelanguage.googleapis.com/v1beta/models?key=$key"
+
+try {
+    # GETリクエストでモデル一覧を取得（推論を伴わないため軽量）
+    $response = Invoke-RestMethod -Uri $uri -Method GET
+    Write-Host "✅ APIキーは正常に機能しています！演習に進んでください。" -ForegroundColor Green
+} catch {
+    # エラー時のステータスコードを取得
+    $statusCode = $_.Exception.Response.StatusCode.value__
+    
+    if ($statusCode -eq 400) {
+        Write-Host "❌ リクエストが不正です。APIキーの形式が崩れている可能性があります。" -ForegroundColor Red
+    } elseif ($statusCode -eq 403) {
+        Write-Host "❌ APIキーが無効です。正しくコピーできているか、不要なスペースが入っていないか確認してください。" -ForegroundColor Red
+    } elseif ($statusCode -eq 503) {
+        Write-Host "⚠️ Googleのサーバーが一時的に混雑しています。キー自体は有効な可能性が高いので、1分ほど待ってから再実行してください。" -ForegroundColor Yellow
+    } else {
+        Write-Host "⚠️ 予期せぬエラーが発生しました: $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+```
+
+以下は、改定前の確認法（参考までに残しておくが、AIと相談して以下のアドバイスをもらったので、上記の確認法に変更しました)
+> 503 Service Unavailable は、Google側のサーバーが一時的な過負荷状態（Model is overloaded）に陥っていることを示すエラーです。  
+> 503エラーが頻発する原因：2026年に入ってから新しいGeminiモデルのリリースなどが相次ぎ、世界的にAPIへのアクセスが急増してインフラへの要求が高まっています。個人アカウントで作成した無料枠（Free tier）のAPIリクエストはベストエフォート（優先度が低い扱い）となるため、サーバーのトラフィックが逼迫したタイミングでは処理が後回しにされ、意図的にこの503エラーが返されやすくなっています。  
+> APIキーの「有効性チェック」だけが目的なら、重い処理である generateContent APIではなく、利用可能なモデル一覧を取得する models.list API（GETリクエスト） を使うアプローチをおすすめします。推論サーバーのキューを回避できるため動作が軽く、503エラーに巻き込まれる確率を劇的に下げられます。
+
+改定前の確認法：
 ```powershell
 $key = "ここにキー"
 $body = '{"contents":[{"parts":[{"text":"こんにちはと返して"}]}]}'
