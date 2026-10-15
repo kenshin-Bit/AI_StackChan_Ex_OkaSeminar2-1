@@ -439,9 +439,10 @@ GoogleのAI「Gemini」が内容を理解して返事を考える
 
 ### 手順
 
-1. USB-Cケーブルで、ロボット本体とパソコンをつなぐ
-2. **PowerShell** を開く（Windowsキーを押して `PowerShell` と入力）
-3. 次を貼り付けて Enter
+1. USB-Cケーブルで、スタックチャン本体とパソコンをつなぐ
+2. スタックチャンの電源を入れる
+3. **PowerShell** を開く（Windowsキーを押して `PowerShell` と入力）
+4. 次を貼り付けて Enter
 
 ```powershell
 Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match 'COM\d+' } | Select-Object Name
@@ -449,7 +450,7 @@ Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match 'COM\d+' } | Sel
 
 4. 出てきた一覧から、本体を探す
 
-> **どれが本体か**
+> **どれが本体か**  
 > 「**USB シリアル デバイス (COM5)**」のような表示が本体です。
 > 「Bluetooth リンク経由の…」は関係ないので無視してください。
 
