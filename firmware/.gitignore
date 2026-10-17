@@ -1,4 +1,6 @@
 .pio
 .vscode
 lib/aquestalk/
-data/
+# data/ は共有したいデータが入っているので、レポジトリに置いておきたいのでコメントアウト。
+# data/SC_SecConfig.yamlだけはAPIキーやWi-Fiパスワードなどが含まれているので共有しないが、これはレポジトリ直下の .gitignore に書いてある。
+# data/
