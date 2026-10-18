@@ -749,18 +749,18 @@ C:\stackchan\firmware\data\
 
 1. `SC_SecConfig.yaml.example` を**右クリック →「コピー」→ 同じ場所に「貼り付け」**
 2. できたファイルの名前を **`SC_SecConfig.yaml`** に変える（`.example` を消す）
-3. 開いて、`********` のうち**3か所だけ**書き換える
+3. 開いて、`********` のうち**下記で右側にコメントが記された3か所だけ**書き換える；stt:とtts:はそのままでOK
 
-授業で提供するWi-FiのSSIDとパスワードは、Moodle一番上の「一般」トピックに掲載しています。授業中はその値を使い、テザリングを使う場合は自分のスマホの値を使ってください。
+授業で提供するWi-FiのSSIDとパスワードは、Moodle一番上の「一般」トピックに掲載しています。授業中はその値を使えますが、テザリングを使う場合は自分のスマホの値を使ってください。
 
 ```yaml
 wifi:
-  ssid: "********"        # 授業Wi-Fiまたはテザリングのネットワーク名
-  password: "********"    # 使用するWi-Fiのパスワード
+  ssid: "********"        # 授業Wi-Fiまたはテザリングのネットワーク名；前後の引用符は削除せず残す
+  password: "********"    # 使用するWi-Fiのパスワード；前後の引用符は削除せず残す
 
 apikey:
   stt: "********"
-  aiservice: "********"   # 第4章で取得したAPIキー
+  aiservice: "********"   # 第4章で取得したAPIキー；前後の引用符は削除せず残す
   tts: "********"
 ```
 
@@ -814,7 +814,7 @@ servo_type: "M5_SCS"
 > **メモ帳で編集しないでください**
 > 日本語を含む設定ファイルは **UTF-8（BOMなし）** という形式で保存する必要があります。
 > Windowsのメモ帳は勝手に別の形式で保存することがあり、そうなると**日本語が化けて設定を読めなくなります。**
-> 必ず **VSCode** で編集・保存してください。
+> **必ず VSCode で編集・保存**してください。
 
 ---
 
@@ -830,7 +830,7 @@ servo_type: "M5_SCS"
 Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match 'COM\d+' } | Select-Object Name
 ```
 
-> **どれが本体か**
+> **どれが本体か**  
 > 「**USB シリアル デバイス (COM5)**」のような表示が本体です。
 > 「Bluetooth リンク経由の…」は関係ないので無視してください。
 > **番号はケーブルを挿し直すと変わることがあります。**
@@ -838,6 +838,7 @@ Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match 'COM\d+' } | Sel
 ### 初回ビルドだけを先に行う場合（授業6回目）
 
 PowerShellで次を実行します。これはプログラムを作る作業だけで、本体への書き込みは行いません。
+⚠️プログラムを置いた場所がC:\stackchan\firmwareでない場合は、自分の環境に合わせて下記の最後の部分を書き直してから実行して下さい。
 
 ```powershell
 & "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -d "C:\stackchan\firmware"
