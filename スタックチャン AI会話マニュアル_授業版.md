@@ -832,7 +832,7 @@ Windowsには**ファイルの場所（パス）の長さに制限**がありま
 >
 > クローン元（またはプル元）のURLは**Moodleの一般トピックに掲載してあります。⚠️旧版ではなく⚠️「SDカード使わない版」からクローン（またはプル）して下さい。**
 
-クローン（またはプル）の操作手順は、「[GitHub_Desktop_学生用手順書.md](https://github.com/okana2ki/AI_StackChan_Ex_OkaSeminar2/blob/main/GitHub_Desktop_%E5%AD%A6%E7%94%9F%E7%94%A8%E6%89%8B%E9%A0%86%E6%9B%B8.md)」を参照して下さい。以下は、以前、ZIPをダウンロードしていたときの手順です。今後は以下の手順は不要ですが、参考のため、残しておきます。
+クローン（またはプル）の操作手順は、「[GitHub_Desktop_学生用手順書.md](https://github.com/okana2ki/AI_StackChan_Ex_OkaSeminar2/blob/main/GitHub_Desktop_%E5%AD%A6%E7%94%9F%E7%94%A8%E6%89%8B%E9%A0%86%E6%9B%B8.md)」を参照して下さい。以下は、以前、ZIPをダウンロードしていたときの手順です。以下の手順のうち、手順2と手順3を、「[GitHub_Desktop_学生用手順書.md](https://github.com/okana2ki/AI_StackChan_Ex_OkaSeminar2/blob/main/GitHub_Desktop_%E5%AD%A6%E7%94%9F%E7%94%A8%E6%89%8B%E9%A0%86%E6%9B%B8.md)」に書かれた手順に置き換えて実行して下さい。その後、以下の手順4と手順5を実行し、次の章に進んで下さい。
 1. moodleに掲載されたURLをブラウザで開く
 2. 緑色の「**Code**」ボタン →「**Download ZIP**」でダウンロード
 3. **`C:\` の直下に `stackchan` というフォルダを作り**、そこに展開する（詳しく書くと、①展開時の「展開先の選択」をする画面内の「参照」ボタンを押す；②C:をクリック；③その状態で「新しいフォルダ」ボタンを押し、stackchanという名前にする；④「フォルダの選択」ボタンを押す）
