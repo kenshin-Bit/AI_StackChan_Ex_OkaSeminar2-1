@@ -971,10 +971,10 @@ Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match 'COM\d+' } | Sel
 ### 初回ビルドだけを先に行う場合（授業6回目）
 
 PowerShellで次を実行します。これはプログラムを作る作業だけで、本体への書き込みは行いません。初回のビルドはたくさんのファイルをダウンロードするため15分くらいかかります。**自宅でできるので、自宅でやっておくと、授業中にサクサク進みます。**  
-⚠️プログラムを置いた場所がC:\stackchan\firmwareでない場合は、自分の環境に合わせて下記の最後の部分を書き直してから実行して下さい。
+⚠️プログラムを置いた場所がC:\stackchan2\firmwareでない場合は、自分の環境に合わせて下記の最後の部分を書き直してから実行して下さい。
 
 ```powershell
-& "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -d "C:\stackchan\firmware"
+& "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -d "C:\stackchan2\firmware"
 ```
 
 最後に `[SUCCESS]` と出れば、ビルド成功です。設定ファイルを第8章の通り準備し、初めて本体に書き込むときは、次の①と②を両方行ってください。
