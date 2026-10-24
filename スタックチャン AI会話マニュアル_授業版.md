@@ -1002,14 +1002,14 @@ PowerShellで次を実行します。これはプログラムを作る作業だ�
 
 ### やり方B：コマンドで
 
-PowerShellで次を実行します。`COM5` の部分は自分の番号に置き換えてください。"C:\stackchan\firmware"も自分が置いた場所に書き変えて下さい。
+PowerShellで次を実行します。`COM5` の部分は自分の番号に置き換えてください。"C:\stackchan2\firmware"も自分が置いた場所に書き変えて下さい。
 
 ```powershell
 # ① 設定ファイル
-& "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -t uploadfs --upload-port COM5 -d "C:\stackchan\firmware"
+& "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -t uploadfs --upload-port COM5 -d "C:\stackchan2\firmware"
 
 # ② プログラム
-& "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -t upload --upload-port COM5 -d "C:\stackchan\firmware"
+& "$env:USERPROFILE\.platformio\penv\Scripts\pio.exe" run -e m5stack-cores3-realtime -t upload --upload-port COM5 -d "C:\stackchan2\firmware"
 ```
 
 初回のプログラムのビルド・書き込みは**約15分を目安**としてください。2回目以降は1分ほどです。
