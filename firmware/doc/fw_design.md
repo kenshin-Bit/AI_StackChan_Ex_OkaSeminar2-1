@@ -65,3 +65,7 @@ WebAPI.cpp のインラインアセンブラ(マクロ：IMPORT_FILE)で incbin�
 - 画面更新時の動作
   - API /memory_get をPOSTし、記憶内容を取得してフォームに表示する。
  
+
+## Gemini Live のTLS検証（岡ゼミ版、2026-10-25）
+
+GeminiLiveはGoogle公式GTS Root R1〜R4をrootCAgoogleGemini.hに保持し、beginSslWithCAで接続する。接続先名と有効期限の検証はWiFiClientSecure/mbedTLSに委ねる。既存の起動時NTP同期とWebSocket再接続を利用し、検証省略へのフォールバックは行わない。PC検査と実機確認の区別・書き込み手順はdoc/20261025_Gemini証明書対策.md（リポジトリ直下）を参照。

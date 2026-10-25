@@ -423,13 +423,13 @@ GeminiLive::GeminiLive(llm_param_t param) : RealtimeLLMBase(param)
   // WebSocket connect
   //
   avatar.setSpeechText("じゅんび中");
-  // ピン留めCA(root_ca_google_gemini)では X509 検証失敗(-9984)が発生するため、
-  // 検証をスキップする beginSSL(insecure) を使用する。
-  // ※MITM耐性は下がる。恒久対応するなら最新の Google ルートCAに差し替えて beginSslWithCA に戻す。
+  // Google公式CAで署名・接続先名・有効期限を検証する（再接続時も同じ）。
+  // 起動時のNTP同期が未完了なら期限検証で拒否され、同期後の再接続で復帰する。
+  // 検証失敗時に beginSSL / setInsecure へ戻すとAPIキーが偽サイトに渡るため禁止。
   // APIキーは URLクエリ ?key= で渡す（Gemini Live WebSocket の公式認証方式）。
   // ヘッダ(x-goog-api-key)方式だと setup 直後にサーバ切断されるため。
   String wsUrl = "/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key=" + param.api_key;
-  webSocket.beginSSL("generativelanguage.googleapis.com", 443, wsUrl.c_str());
+  webSocket.beginSslWithCA("generativelanguage.googleapis.com", 443, wsUrl.c_str(), root_ca_google_gemini);
 
   webSocket.onEvent(webSocketEvent);
   String auth = "x-goog-api-key: " + param.api_key;
