@@ -264,8 +264,9 @@ Select-String -LiteralPath firmware/src/llm/Gemini/GeminiLive.cpp -Pattern 'webS
 Select-String -LiteralPath firmware/src/rootCA/rootCAgoogleGemini.h -Pattern 'SHA-256'
 ~~~
 
-一つ目にCA指定の接続呼び出し、二つ目にGTS Root R1〜R4の4つの指紋が表示されることを確認します。
-ファイルがない、表示が違う場合は、古いプログラムを書き込まず教員に相談します。
+pull origin操作をして修正版を自分のPCに取り込む前に上記を実行すると、何も表示されませんが、修正版を取り込んだ後で上記を実行すると、
+一つ目にCA指定の接続呼び出し、二つ目にGTS Root R1〜R4の4つの指紋が表示されることが確認できます。
+ファイルがない、表示が違う場合は、教員に相談します。
 この文字列確認だけで配布物の真正性や本体の動作を証明するものではありません。
 
 各自のPCの安全対策完了だけでは、スタックチャン本体内のプログラムは変わりません。
