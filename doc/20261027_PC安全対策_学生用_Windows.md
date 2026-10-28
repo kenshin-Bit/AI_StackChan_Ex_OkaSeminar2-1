@@ -57,8 +57,10 @@ PowerShellとVS Codeのターミナルを使い分ける箇所は、本文の指
 
 1. VS Code、Git Bash、GitHub Desktopなど、Gitを使うアプリを閉じる。
 2. 更新したブラウザで [Gitの公式ダウンロードページ](https://git-scm.com/install/windows) から最新版をダウンロード。通常のIntel/AMDの64ビットPCでは「Git-2.56.0.3-64-bit.exe」（←今回の問題に対応した版はこれ；これ以降の版もOK）を取得する。ARMのPCはARM64版。
-3. ダウンロードしたファイルを実行し、既存設定を引き継いで更新する。アンインストールは不要。
-4. 新しくPowerShellを開き、次を実行する。
+3. ダウンロードしたファイルを実行し、既存設定を引き継いで更新する。アンインストールは不要。初めてGitをインストールする場合は、選択画面がいろいろ出てきますが、基本的にはデフォルト（推奨値）のまま「Next」で進めて構いません。次の選択肢については、以下のように選択し直して「Next」で進むことを勧めます。
+   - エディタ(default editor)の選択：Vimが表示されますが、Visual Studio Codeを選択した方が使いやすいと思います。
+   - initial branchの名前：masterがデフォルトで表示されますが、mainを指定するのが今は普通です。
+5. 新しくPowerShellを開き、次を実行する。
 
 ~~~powershell
 git --version
