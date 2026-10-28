@@ -826,7 +826,9 @@ Git は、ビルドに必要な部品を GitHub から取得するための無�
 3. インストール中に 「Adjusting your PATH environment」 という画面が出たら、次を選んでください。  
    > Git from the command line and also from 3rd-party software
 
-   これは、PowerShell や PlatformIO から Git を使えるようにする設定です。その他の項目は基本的に初期設定のまま進めてください。
+   これは、PowerShell や PlatformIO から Git を使えるようにする設定です。次の選択肢についても、以下のように選択し直して「Next」で進むことを勧めます。その他の項目は基本的にデフォルト（推奨値）のまま「Next」で進めて大丈夫です。
+   - エディタ(default editor)の選択：Vimが表示されますが、Visual Studio Codeを選択した方が使いやすいと思います。
+   - initial branchの名前：masterがデフォルトで表示されますが、mainを指定するのが今は普通です。
 
 4. インストールが終わったら、PowerShell・Windows Terminal・VSCode をいったん完全に終了し、開き直してください。 開いたままだと、新しい設定が反映されないことがあります。
 
